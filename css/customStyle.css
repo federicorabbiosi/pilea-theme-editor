@@ -1,0 +1,156 @@
+.root {
+  height: 100vh;
+  font-family: "Open Sans",sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+#background {
+  background: rgb(1, 4, 58);
+}
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.box {
+  display: flex;
+  flex-direction: column;
+  /*width: 75%;*/
+  max-width: 70%;
+  background-color: #fff;
+  margin-top: 3em;
+  padding: 1em;
+  border-radius: 1.25rem!important;
+  align-items: center!important;
+  justify-content: center!important;
+  text-align: center;
+  color: rgb(59, 59, 59);
+}
+h2 {
+  font-size: calc(1.3rem + .6vw);
+  font-weight: 500;
+  line-height: 1.2;
+}
+p {
+  font-size: 1.156rem;
+  font-weight: 500;
+  line-height: 1.2;
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+}
+.btn {
+  cursor: pointer;
+  border-radius: 0.6rem !important;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  padding: 1em;
+}
+.btn-secondary {
+  background-color: rgb(108, 117, 125);
+  color: rgb(255, 255, 255);
+  border: 1px solid rgb(108, 117, 125);
+}
+.btn-paga {
+  width: 100%;
+  margin-top: 1em;
+}
+
+.btn:hover {
+  transform: scale(1.02);
+  transition: all 0.2s ease 0s;
+  box-shadow: rgb(0 0 0 / 20%) 0px 5px 10px !important;
+}
+
+.editor {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  left: 0;
+  top: 20px;
+  bottom: 20px;
+  width: 250px;
+  background-color: white;
+  border-bottom-right-radius: 10px;
+  border-top-right-radius: 10px;
+  box-shadow: 0px 0 10px #00000040;
+  transition: all 1s;
+  overflow-x: hidden;
+}
+.editor-collapse {
+  width: 50px;
+  transition: all .5s;
+}
+.editor-collapse:hover {
+  width: 60px;
+}
+.editor h4 {
+  margin-bottom: .5em;
+}
+.toggle-editor {
+  cursor: pointer;
+  height: 20px;
+  width: 20px;
+  padding: 16px;
+  align-self: flex-end;
+}
+.controls {
+  display: flex;
+  flex-direction: column;
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-bottom: 1em;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.controls-content-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Riepilogo */
+.receipt-grid {
+  display: flex;
+  flex-direction: column;
+}
+.receipt-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.receipt-page p {
+  padding-left: 0;
+  padding-right: 0;
+}
+.receipt-page td {
+  margin-left: 2em;
+  margin-right: 1.5em;
+}
+.receipt-page .right-td {
+  min-width: 200px;
+}
+.receipt-page .left-td {
+  padding-right: 1em;
+}
+.main-title {
+  line-height: 1.2;
+  font-weight: 600;
+  font-size: 16px;
+  text-align: start;
+}
+.border-bottom {
+  border-bottom: 1px solid #808080;
+}
+.total-label {
+  font-weight: bold;
+}
+.total-value {
+  font-weight: bold;
+  text-align: end;
+  font-size: 1.5em;
+}

@@ -1,1 +1,132 @@
-Ciao!
+<html>
+
+  <link rel="stylesheet" href="./css/customStyle.css">
+  <script src="./js/script.js"></script>
+
+  <body id="background" class="root" style="overflow: auto;">
+    <div class="main">
+      <img alt="logo" id="top-image" src="https://www.eremind.it/files/logo-pileapay.svg?s" style="max-width: 200px;"/>
+
+      <div id="box" class="box">
+        <!-- Receipt Page -->
+        <div id="receipt-page" >
+          <div class="receipt-page">
+            <h5 class="main-title">Riepilogo dati avviso pagoPA</h5>
+            <table id="receipt-table">
+              <tr>
+                <td>
+                  <p class="left-td">Ente creditore</p>
+                </td>
+                <td>
+                  <p class="left-td">Teateservizi srl</p>
+                </td>
+                <td class="receipt-row right-td border-bottom">
+                  <p class="">Importo</p>
+                  <p>€ 1,00</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p class="left-td">Codice avviso</p>
+                </td>
+                <td>
+                  <p class="left-td">302000000052994622</p>
+                </td>
+                <td class="receipt-row right-td border-bottom">
+                  <p class="">Commissioni</p>
+                  <p>€ 2,00</p>
+                </td>
+              </tr>
+              
+              <tr>
+                <td>
+                  <p class="left-td">Oggetto</p>
+                </td>
+                <td>
+                  <p class="left-td">Test</p>
+                </td>
+                <td class="receipt-row right-td">
+                  <p class="total-label">Totale</p>
+                  <p class="total-value">€ 3,00</p>
+                </td>
+              </tr>
+            </table>
+            <img src="./media/nexi-logo-it.webp" width="150px"/>
+            <button id="btn" type="button" class="btn btn-secondary btn-paga">Paga <b>€ 3,00</b></button>
+
+          </div>
+        </div>
+        <!-- Error Page -->
+        <div id="error-page" style="display: none">
+          <div>
+            <h2>Attenzione</h2>
+          </div>
+          <div>
+            <p class="w-80 m-auto">L'ente creditore non è raggiungibile. Prova a verificare di aver inserito correttamente il codice avviso, oppure riprova più tardi.</p>
+          </div>
+          <div>
+            <button id="btn" type="button" class="btn btn-secondary">Torna al portale</button>
+          </div>
+        </div>
+      </div>
+
+      <img style="margin-top: 2em;" alt="logo" id="bottom-image" src="./media/transparent.svg" style="max-width: 200px;"/>
+
+      <div class="editor" id="editor-panel">
+      <div class="toggle-editor" onclick="toggleEditor()">
+        <img id="editor-panel-toggle" src="./media/icon/xmark-solid.svg" />
+      </div>
+
+
+      <div class="controls">
+        <div class="controls-content-container">
+          <h4>Pagina</h4>
+          <select id="pages-select" onchange="changePage()">
+            <option value="receipt">Riepilogo</option>
+            <option value="error">Errore</option>
+          </select>
+        </div>
+        <div class="controls-content-container">
+          <h4>Sfondo</h4>
+          <div class="controls-content-row">Background: <input id="bgColorPicker" type="color"/></div>
+        </div>
+
+        <div class="controls-content-container">
+          <h4>Immagini</h4>
+          Logo superiore:<br>
+          <input style="margin-bottom: 1em" id="logoPicker" type="file" accept=".svg, .jpg, .png, .jpeg, .gif, .bmp, .tif, .tiff|image/*" onchange="changeImage(this, 'top-image')" /><br>
+          Logo inferiore:<br>
+          <input id="bottomLogoPicker" type="file" accept=".svg, .jpg, .png, .jpeg, .gif, .bmp, .tif, .tiff|image/*" onchange="changeImage(this, 'bottom-image')" /><br>
+        </div>
+
+        <div class="controls-content-container">
+          <h4>Box</h4>
+          <div>
+            <div class="controls-content-row">Background: <input id="boxBGColorPicker" type="color" /></div>
+            <div class="controls-content-row">Text Color: <input id="boxTextColorPicker" type="color" /></div>
+          </div>
+        </div>
+
+        <div class="controls-content-container">
+          <h4>Button</h4>
+          <div class="controls-content-row">Background: <input id="btnBGPicker" type="color" /></div>
+          <div class="controls-content-row">Border Color: <input id="btnBorderPicker" type="color" /></div>
+          <div class="controls-content-row">Text Color: <input id="btnColorPicker" type="color" /></div>
+        </div>
+
+        <div class="controls-content-container">
+          <h4>Importa configurazione</h4>
+          <input type="file" accept=".json" onchange="importConfig(this)" />
+        </div>
+
+        <div class="controls-content-container">
+          <h4>Azioni</h4>
+          <button type="button" onclick="exportData()">Esporta</button>
+          <button type="button" onclick="saveDataLocally()">Salva</button>
+          <button type="button" onclick="reset()">Reset</button>
+        </div>
+      </div>
+    </div>
+    </div>
+  </body>
+</html>
