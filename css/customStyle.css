@@ -151,14 +151,16 @@ h2 {
 .table .col {
   padding: .5em;
 }
-
 .table .row {
   display: flex;
   justify-content: space-between;
   align-items: center;
   text-align: start;
 }
-
+.table p {
+  margin-left: .3em;
+  margin-right: .3em
+}
 @media only screen and (max-width: 600px) {
   .editor {
     width: 80%;
