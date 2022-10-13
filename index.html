@@ -1,5 +1,5 @@
 <html>
-
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
   <link rel="stylesheet" href="./css/customStyle.css">
   <script src="./js/script.js"></script>
 
@@ -11,7 +11,8 @@
         <!-- Receipt Page -->
         <div id="receipt-page" >
           <div class="receipt-page">
-            <h5 class="main-title">Riepilogo dati avviso pagoPA</h5>
+            <h2 class="main-title">Riepilogo dati avviso pagoPA</h2>
+            <!--
             <table id="receipt-table">
               <tr>
                 <td>
@@ -51,6 +52,38 @@
                 </td>
               </tr>
             </table>
+          -->
+            <div class="table">
+              <div class="col left">
+                <div class="row">
+                  <p>Ente creditore</p>
+                  <p>Teateservizi srl</p>
+                </div>
+                <div class="row">
+                  <p>Codice avviso</p>
+                  <p>302000000052994622</p>
+                </div>
+                <div class="row">
+                  <p>Oggetto</p>
+                  <p>Test</p>
+                </div>
+              </div>
+              <div class="col">
+                <div class="row">
+                  <p>Importo</p>
+                  <p>€ 3,00</p>
+                </div>
+                <div class="row">
+                  <p>Commissioni</p>
+                  <p>€ 2,00</p>
+                </div>
+                <div class="row">
+                  <p class="total-label">Totale</p>
+                  <p class="total-value">€ 5,00</p>
+                </div>
+              </div>
+            </div>
+
             <img src="./media/nexi-logo-it.webp" width="150px"/>
             <button id="btn" type="button" class="btn btn-secondary btn-paga">Paga <b>€ 3,00</b></button>
 

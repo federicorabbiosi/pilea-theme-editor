@@ -1,3 +1,6 @@
+html {
+  font-size: 16px;
+}
 .root {
   height: 100vh;
   font-family: "Open Sans",sans-serif;
@@ -114,33 +117,13 @@ p {
 }
 
 /* Riepilogo */
-.receipt-grid {
-  display: flex;
-  flex-direction: column;
-}
-.receipt-row {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
 .receipt-page p {
   padding-left: 0;
   padding-right: 0;
 }
-.receipt-page td {
-  margin-left: 2em;
-  margin-right: 1.5em;
-}
-.receipt-page .right-td {
-  min-width: 200px;
-}
-.receipt-page .left-td {
-  padding-right: 1em;
-}
 .main-title {
   line-height: 1.2;
   font-weight: 600;
-  font-size: 16px;
   text-align: start;
 }
 .border-bottom {
@@ -153,4 +136,37 @@ p {
   font-weight: bold;
   text-align: end;
   font-size: 1.5em;
+}
+
+h2 {
+  font-size: 1.5em;
+}
+.table {
+  display: flex;
+  flex-direction: row;
+}
+.table .col .left{
+  width: 60%;
+}
+.table .col {
+  padding: .5em;
+}
+
+.table .row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: start;
+}
+
+@media only screen and (max-width: 600px) {
+  .editor {
+    width: 80%;
+  }
+  .editor-collapse {
+    width: 40px;
+  }
+  .table {
+    flex-direction: column;
+  }
 }
