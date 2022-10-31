@@ -66,7 +66,7 @@ function startup() {
     // Button
     btnBGPicker.value = savedData.button.primary.background
     changeBackgroundColor(savedData.button.primary.background, "button.btn")
-    btnBorderPicker.value = savedData.button.primary.borde
+    btnBorderPicker.value = savedData.button.primary.border
     changeBorderColor(savedData.button.primary.border, "button.btn")
     btnColorPicker.value = savedData.button.primary.text_color
     changeColor(savedData.button.primary.text_color, "button.btn")
