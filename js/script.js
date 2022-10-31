@@ -47,34 +47,34 @@ function startup() {
   // Restore saved data
   if (savedData) {
     savedData = JSON.parse(savedData)
-    bgColorPicker.value = savedData.backgroundColor
-    changeBackgroundColor(savedData.backgroundColor, "body")
+    bgColorPicker.value = savedData.bc_body
+    changeBackgroundColor(savedData.bc_body, "body")
 
-    boxBGPicker.value = savedData.box.backgroundColor
-    changeBackgroundColor(savedData.box.backgroundColor, "div.box")
+    boxBGPicker.value = savedData.card_input_data.background
+    changeBackgroundColor(savedData.card_input_data.background, "div.box")
 
-    textColorPicker.value = savedData.box.color
-    changeColor(savedData.box.color, "div.box")
-    changeColor(savedData.box.color, "table")
+    textColorPicker.value = savedData.card_input_data.text_color
+    changeColor(savedData.card_input_data.text_color, "div.box")
+    changeColor(savedData.card_input_data.text_color, "table")
 
-    accentTextColorPicker.value = savedData.box.accentColor
-    changeColor(savedData.box.accentColor, "p.accent-color")
+    accentTextColorPicker.value = savedData.card_input_data.text_accent_color
+    changeColor(savedData.card_input_data.text_accent_color, "p.accent-color")
 
-    totalRowColorPicker.value = savedData.box.totalColor
-    changeColor(savedData.box.totalColor, "div.total-row")
+    totalRowColorPicker.value = savedData.card_input_data.total_amount_text_color
+    changeColor(savedData.card_input_data.total_amount_text_color, "div.total-row")
 
     // Button
-    btnBGPicker.value = savedData.button.backgroundColor
-    changeBackgroundColor(savedData.button.backgroundColor, "button.btn")
-    btnBorderPicker.value = savedData.button.borderColor
-    changeBorderColor(savedData.button.borderColor, "button.btn")
-    btnColorPicker.value = savedData.button.color
-    changeColor(savedData.button.color, "button.btn")
+    btnBGPicker.value = savedData.button.primary.background
+    changeBackgroundColor(savedData.button.primary.background, "button.btn")
+    btnBorderPicker.value = savedData.button.primary.borde
+    changeBorderColor(savedData.button.primary.border, "button.btn")
+    btnColorPicker.value = savedData.button.primary.text_color
+    changeColor(savedData.button.primary.text_color, "button.btn")
 
     // Images
-    topImage.src = savedData.images.top
-    if (!savedData.images.bottom.includes("/media/transparent.svg")) {
-      bottomImage.src = savedData.images.bottom
+    topImage.src = savedData.top_image_ext
+    if (!savedData.bottom_image_ext.includes("/media/transparent.svg")) {
+      bottomImage.src = savedData.bottom_image_ext
     }
   }
 
@@ -171,26 +171,6 @@ getConfigData = () => {
     logo_nexi_receipt_it: document.getElementById('nexi-logo').src.split('media/')[1],
     bottom_image_ext: bottomImage.src,
     top_image_ext: topImage.src
-  }
-
-  return {
-    backgroundColor: bgColorPicker.value,
-    box: {
-      backgroundColor: boxBGPicker.value,
-      color: textColorPicker.value,
-      accentColor: accentTextColorPicker.value,
-      totalColor: totalRowColorPicker.value
-    },
-    button: {
-      backgroundColor: btnBGPicker.value,
-      color: btnColorPicker.value,
-      borderColor: btnBorderPicker.value
-    },
-    images: {
-      top: topImage.src,
-      bottom: bottomImage.src,
-      nexi: document.getElementById('nexi-logo').src.split('media/')[1]
-    }
   }
 }
 
