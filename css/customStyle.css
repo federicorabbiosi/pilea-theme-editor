@@ -34,7 +34,6 @@ h2 {
   line-height: 1.2;
 }
 p {
-  font-size: 1.156rem;
   font-weight: 500;
   line-height: 1.2;
   padding-left: 1.5em;
@@ -139,28 +138,31 @@ p {
 }
 
 h2 {
-  font-size: 1.5em;
+  font-size: 1.2em;
 }
 .table {
   display: flex;
   flex-direction: row;
 }
-.table .col .left{
-  width: 60%;
-}
 .table .col {
   padding: .5em;
+}
+.table .left{
+  min-width: 300px;
+  margin-right: 50px;
 }
 .table .row {
   display: flex;
   justify-content: space-between;
   align-items: center;
   text-align: start;
+  min-width: 250px;
 }
 .table p {
   margin-left: .3em;
-  margin-right: .3em
+  margin-right: .3em;
 }
+
 @media only screen and (max-width: 600px) {
   .editor {
     width: 80%;
@@ -170,5 +172,9 @@ h2 {
   }
   .table {
     flex-direction: column;
+  }
+  .table .left{
+    min-width: 0;
+    margin-right: 0;
   }
 }
