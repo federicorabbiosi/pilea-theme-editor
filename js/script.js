@@ -6,6 +6,8 @@ var editorToggleContainer
 var bgColorPicker
 var boxBGPicker
 var textColorPicker
+var accentTextColorPicker
+var totalRowColorPicker
 var btnBGPicker
 var btnBorderPicker
 var btnColorPicker
@@ -26,6 +28,8 @@ function startup() {
   bgColorPicker = document.getElementById("bgColorPicker")
   boxBGPicker = document.getElementById("boxBGColorPicker")
   textColorPicker = document.getElementById("boxTextColorPicker")
+  accentTextColorPicker = document.getElementById("boxAccentColorPicker")
+  totalRowColorPicker = document.getElementById("boxTotalRowColorPicker")
   btnBGPicker = document.getElementById("btnBGPicker")
   btnBorderPicker = document.getElementById("btnBorderPicker")
   btnColorPicker = document.getElementById("btnColorPicker")
@@ -53,6 +57,12 @@ function startup() {
     changeColor(savedData.box.color, "div.box")
     changeColor(savedData.box.color, "table")
 
+    accentTextColorPicker.value = savedData.box.accentColor
+    changeColor(savedData.box.accentColor, "p.accent-color")
+
+    totalRowColorPicker.value = savedData.box.totalColor
+    changeColor(savedData.box.totalColor, "div.total-row")
+
     // Button
     btnBGPicker.value = savedData.button.backgroundColor
     changeBackgroundColor(savedData.button.backgroundColor, "button.btn")
@@ -74,6 +84,8 @@ function startup() {
     changeColor(event.target.value, "div.box")
     changeColor(event.target.value, "table")
   }, false)
+  accentTextColorPicker.addEventListener("input", (event) => changeColor(event.target.value, "p.accent-color"))
+  totalRowColorPicker.addEventListener("input", (event) => changeColor(event.target.value, "div.total-row"))
   btnBGPicker.addEventListener("input", (event) => changeBackgroundColor(event.target.value, "button.btn"), false)
   btnColorPicker.addEventListener("input", (event) => changeColor(event.target.value, "button.btn"), false)
   btnBorderPicker.addEventListener("input", (event) => changeBorderColor(event.target.value, "button.btn"), false)
@@ -137,10 +149,37 @@ changePage = () => {
 
 getConfigData = () => {
   return {
+    bc_body: bgColorPicker.value,
+    card_input_data: {
+      background: boxBGPicker.value,
+      text_color: textColorPicker.value,
+      text_accent_color: accentTextColorPicker.value,
+      total_amount_text_color: totalRowColorPicker.value
+      /* TODO
+        importo_aggiornato
+        border
+        title_color
+      */
+    },
+    button: {
+      primary: {
+        background: btnBGPicker.value,
+        text_color: btnColorPicker.value,
+        border: btnBorderPicker.value
+      }
+    },
+    logo_nexi_receipt_it: document.getElementById('nexi-logo').src.split('media/')[1],
+    bottom_image_ext: bottomImage.src,
+    top_image_ext: topImage.src
+  }
+
+  return {
     backgroundColor: bgColorPicker.value,
     box: {
       backgroundColor: boxBGPicker.value,
-      color: textColorPicker.value
+      color: textColorPicker.value,
+      accentColor: accentTextColorPicker.value,
+      totalColor: totalRowColorPicker.value
     },
     button: {
       backgroundColor: btnBGPicker.value,
@@ -149,9 +188,15 @@ getConfigData = () => {
     },
     images: {
       top: topImage.src,
-      bottom: bottomImage.src
+      bottom: bottomImage.src,
+      nexi: document.getElementById('nexi-logo').src.split('media/')[1]
     }
   }
+}
+
+changeNexiLogo = (event) => {
+  document.getElementById('nexi-logo').src = event.target.value === 'normal' ? "./media/nexi-logo-dark.webp" : "./media/nexi-logo.webp"
+  console.log(document.getElementById('nexi-logo').src.split('media/')[1])
 }
 
 changeImage = (event, target) => {
@@ -164,10 +209,6 @@ changeImage = (event, target) => {
 
     reader.readAsDataURL(event.files[0])
   }
-}
-
-changeBottomImage = (event) => {
-
 }
 
 exportData = () => {
