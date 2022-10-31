@@ -15,16 +15,16 @@
             <div class="table">
               <div class="col left">
                 <div class="row">
-                  <p>Ente creditore</p>
-                  <p>Teateservizi srl</p>
+                  <p class="accent-color">Ente creditore</p>
+                  <p>Comune di Traona</p>
                 </div>
                 <div class="row">
-                  <p>Codice avviso</p>
+                  <p class="accent-color">Codice avviso</p>
                   <p>302000000052994622</p>
                 </div>
                 <div class="row">
-                  <p>Oggetto</p>
-                  <p>Test</p>
+                  <p class="accent-color">Oggetto</p>
+                  <p>Pagamento mensa scolastica</p>
                 </div>
               </div>
               <div class="col">
@@ -36,14 +36,14 @@
                   <p>Commissioni</p>
                   <p>€ 2,00</p>
                 </div>
-                <div class="row">
+                <div class="row total-row">
                   <p class="total-label">Totale</p>
                   <p class="total-value">€ 5,00</p>
                 </div>
               </div>
             </div>
 
-            <img src="./media/nexi-logo-it.webp" width="150px"/>
+            <img id="nexi-logo" src="./media/nexi-logo-dark.webp" width="150px"/>
             <button id="btn" type="button" class="btn btn-secondary btn-paga">Paga <b>€ 3,00</b></button>
 
           </div>
@@ -64,11 +64,11 @@
 
       <img style="margin-top: 2em;" alt="logo" id="bottom-image" src="./media/transparent.svg" style="max-width: 200px;"/>
 
+      <!-- Editor Panel -->
       <div class="editor" id="editor-panel">
       <div class="toggle-editor" onclick="toggleEditor()">
         <img id="editor-panel-toggle" src="./media/icon/xmark-solid.svg" />
       </div>
-
 
       <div class="controls">
         <div class="controls-content-container">
@@ -95,8 +95,18 @@
           <h4>Box</h4>
           <div>
             <div class="controls-content-row">Background: <input id="boxBGColorPicker" type="color" /></div>
-            <div class="controls-content-row">Text Color: <input id="boxTextColorPicker" type="color" /></div>
+            <div class="controls-content-row">Colore testo: <input id="boxTextColorPicker" type="color" /></div>
+            <div class="controls-content-row">Colore accent: <input id="boxAccentColorPicker" type="color" /></div>
+            <div class="controls-content-row">Colore testo <i>totale</i>: <input id="boxTotalRowColorPicker" type="color" /></div>
           </div>
+        </div>
+
+        <div class="controls-content-container">
+          <h4>Logo Nexi</h4>
+          <select id="nexi-logo-select" onchange="changeNexiLogo(event)">
+            <option value="normal">Normale</option>
+            <option value="white">Bianco</option>
+          </select>
         </div>
 
         <div class="controls-content-container">
@@ -119,6 +129,6 @@
         </div>
       </div>
     </div>
-    </div>
+
   </body>
 </html>
