@@ -108,7 +108,7 @@ toggleEditor = (event) => {
     document.querySelector("div.controls").style.display = "flex"
     editorToggleContainer.style.display = 'block'
     editorToggleContainer.style.flex = 0
-    editorToggleContainerstyle.alignItems = undefined
+    editorToggleContainer.style.alignItems = undefined
   }
 }
 

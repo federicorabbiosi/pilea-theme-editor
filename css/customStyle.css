@@ -162,10 +162,13 @@ h2 {
   margin-left: .3em;
   margin-right: .3em;
 }
+.t-right {
+  text-align: end;
+}
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 900px) {
   .editor {
-    width: 80%;
+    width: 50%;
   }
   .editor-collapse {
     width: 40px;
@@ -173,8 +176,26 @@ h2 {
   .table {
     flex-direction: column;
   }
+  .table .row {
+    min-width: 400px;
+  }
   .table .left{
     min-width: 0;
     margin-right: 0;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .editor {
+    width: 80%;
+  }
+  .table .row {
+    min-width: 250px;
+  }
+  .editor-collapse {
+    width: 40px;
+  }
+  .editor-collapse:hover {
+    width: 50px;
   }
 }

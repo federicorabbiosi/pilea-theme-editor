@@ -16,15 +16,15 @@
               <div class="col left">
                 <div class="row">
                   <p class="accent-color">Ente creditore</p>
-                  <p>Comune di Traona</p>
+                  <p class="t-right">Comune di Traona</p>
                 </div>
                 <div class="row">
                   <p class="accent-color">Codice avviso</p>
-                  <p>302000000052994622</p>
+                  <p class="t-right">302000000052994622</p>
                 </div>
                 <div class="row">
                   <p class="accent-color">Oggetto</p>
-                  <p>Pagamento mensa scolastica</p>
+                  <p class="t-right">Pagamento mensa scolastica</p>
                 </div>
               </div>
               <div class="col">
@@ -62,7 +62,7 @@
         </div>
       </div>
 
-      <img style="margin-top: 2em;" alt="logo" id="bottom-image" src="./media/transparent.svg" style="max-width: 200px;"/>
+      <img style="margin-top: 2em; max-width: 200px" alt="logo" id="bottom-image" src="./media/transparent.svg" style="max-width: 200px;"/>
 
       <!-- Editor Panel -->
       <div class="editor" id="editor-panel">
@@ -80,24 +80,24 @@
         </div>
         <div class="controls-content-container">
           <h4>Sfondo</h4>
-          <div class="controls-content-row">Background: <input id="bgColorPicker" type="color"/></div>
+          <div class="controls-content-row">Colore<input id="bgColorPicker" type="color"/></div>
         </div>
 
         <div class="controls-content-container">
           <h4>Immagini</h4>
-          Logo superiore:<br>
+          Logo superiore<br>
           <input style="margin-bottom: 1em" id="logoPicker" type="file" accept=".svg, .jpg, .png, .jpeg, .gif, .bmp, .tif, .tiff|image/*" onchange="changeImage(this, 'top-image')" /><br>
-          Logo inferiore:<br>
+          Logo inferiore<br>
           <input id="bottomLogoPicker" type="file" accept=".svg, .jpg, .png, .jpeg, .gif, .bmp, .tif, .tiff|image/*" onchange="changeImage(this, 'bottom-image')" /><br>
         </div>
 
         <div class="controls-content-container">
           <h4>Box</h4>
           <div>
-            <div class="controls-content-row">Background: <input id="boxBGColorPicker" type="color" /></div>
-            <div class="controls-content-row">Colore testo: <input id="boxTextColorPicker" type="color" /></div>
-            <div class="controls-content-row">Colore accent: <input id="boxAccentColorPicker" type="color" /></div>
-            <div class="controls-content-row">Colore testo <i>totale</i>: <input id="boxTotalRowColorPicker" type="color" /></div>
+            <div class="controls-content-row">Background<input id="boxBGColorPicker" type="color" /></div>
+            <div class="controls-content-row">Colore testo<input id="boxTextColorPicker" type="color" /></div>
+            <div class="controls-content-row">Colore accent<input id="boxAccentColorPicker" type="color" /></div>
+            <div class="controls-content-row"><span>Colore testo <i>"totale"</i></span><input id="boxTotalRowColorPicker" type="color" /></div>
           </div>
         </div>
 
@@ -111,9 +111,9 @@
 
         <div class="controls-content-container">
           <h4>Button</h4>
-          <div class="controls-content-row">Background: <input id="btnBGPicker" type="color" /></div>
-          <div class="controls-content-row">Border Color: <input id="btnBorderPicker" type="color" /></div>
-          <div class="controls-content-row">Text Color: <input id="btnColorPicker" type="color" /></div>
+          <div class="controls-content-row">Background<input id="btnBGPicker" type="color" /></div>
+          <div class="controls-content-row">Border Color<input id="btnBorderPicker" type="color" /></div>
+          <div class="controls-content-row">Text Color<input id="btnColorPicker" type="color" /></div>
         </div>
 
         <div class="controls-content-container">
