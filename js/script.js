@@ -76,6 +76,16 @@ function startup() {
     if (!savedData.bottom_image_ext.includes("/media/transparent.svg")) {
       bottomImage.src = savedData.bottom_image_ext
     }
+  } else {
+    // initialize picker with pilea theme
+    bgColorPicker.value = '#01043a'
+    boxBGPicker.value = '#ffffff'
+    textColorPicker.value = '#3b3b3b'
+    accentTextColorPicker.value = '#3b3b3b'
+    totalRowColorPicker.value = '#3b3b3b'
+    btnBGPicker.value = '#6c757d'
+    btnBorderPicker.value = '#6c757d'
+    btnColorPicker.value = '#ffffff'
   }
 
   bgColorPicker.addEventListener("input", (event) => changeBackgroundColor(event.target.value, "body"), false)
@@ -209,6 +219,7 @@ saveDataLocally = () => {
 reset = () => {
   window.localStorage.removeItem(SAVED_DATA_KEY)
   window.location.reload()
+  initializePicker()
 }
 
 importConfig = (event) => {
@@ -222,4 +233,13 @@ importConfig = (event) => {
 
     reader.readAsText(event.files[0])
   }
+}
+
+initializePicker = () => {
+
+}
+
+// initialize picker and localstorage with savedTheme or pilea theme
+setDefaultValue = () => {
+
 }
